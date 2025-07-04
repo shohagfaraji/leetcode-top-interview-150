@@ -34,16 +34,19 @@ public:
             for (int j = 0; j < 9; j++) {
                 if (isdigit(board[i][j])) {
                     int val = board[i][j] - '1';
+                    
                     if (row[i][val]) {
                         return false;
                     } else {
                         row[i][val] = 1;
                     }
+
                     if (col[j][val]) {
                         return false;
                     } else {
                         col[j][val] = 1;
                     }
+
                     if (box[boxNo(i, j)][val]) {
                         return false;
                     } else {
